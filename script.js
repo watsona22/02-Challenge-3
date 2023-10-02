@@ -1,31 +1,5 @@
 // Write password to the #password input
 var generateBtn = document.querySelector("#generate");
-
-var specialCharacters = [
-  '@',
-  '%',
-  '+',
-  '\\',
-  '/',
-  "'",
-  '!',
-  '#',
-  '$',
-  '^',
-  '?',
-  ':',
-  ',',
-  ')',
-  '(',
-  '}',
-  '{',
-  ']',
-  '[',
-  '~',
-  '-',
-  '_',
-  '.',
-];
 function generatePassword() {
   //var password = [preferredLength, lowercase, uppercase, numeric, special]
 
@@ -33,6 +7,7 @@ function generatePassword() {
 
   var preferredLength = parseInt(window.prompt("What is the preferred length of your password? (8-128 characters) "));
   console.log(preferredLength);
+  //include user case when NaN is entered
   if  (Number.isNaN(preferredLength) || preferredLength >= 129 || preferredLength <= 7) {
     alert("You must do it right!")
     return generatePassword();    
@@ -55,25 +30,21 @@ function generatePassword() {
 
   if (uppercase === true) {
     const uppercharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
     possibleChars += uppercharacters
   } 
   
 
   if (numeric === true) {
-    const characters = '0123456789';
-    function generateRandomString(length) {
-      let result = '';
-      const numeric = characters.length;
-      for (let i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * numeric));
-      }
-      return result;
-    }
-  } 
+    const numericcharacters = '0123456789';
+
+    possibleChars += numericcharacters
+  }
 
   if (special === true) {
-    const characters = '!@#$%^&*()@+//\'?:,{[]~-_.';
-  
+    const specialcharacters = '!@#$%^&*()@+//\'?:,{[]~-_.';
+    possibleChars += specialcharacters
+    
     function generateRandomString(length) {
       let result = '';
       const numeric = characters.length;
@@ -85,6 +56,7 @@ function generatePassword() {
   } 
   console.log(possibleChars)
   //write a for loop here that loops once for each character the user would like to have in their password
+  //generate random string from programiz.com/ refined with the help of tutor, Erik Hersch.
   var result = ""
    for (let i = 0; i < preferredLength; i++) {
         result += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
