@@ -1,10 +1,13 @@
-# 02-Challenge-3
+# Password Generator
 
 ## Description
 
-The purpose of this challenge was to deploy a webpage application with the ability to generate a password, based on criteria entered by the user.  This project features dynamic HTML and CSS that is updated using Javascript. The page also includes a responsive design interface for adaptation to mulitiple screen sizes.  
+This application generates a unique password based on user criteria. Password Generator features dynamic HTML and CSS that is updated using Javascript. The page also includes a responsive design interface for adaptation to mulitiple screen sizes.  
 
 The acceptance criteria were as follows: 
+
+## Acceptance Criteria
+```
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
@@ -20,7 +23,7 @@ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
-
+```
 All acceptance criteria were met and the site functions as expected.
 
 I learned the necessity of separating global code from inner functions. For instance, in one iteration, I moved the "var generateBtn" inside the "generatePassword()" function which caused problems synactically becuase we would need to call on that variable later to initiate user prompts. I also learned new functions and methods including parseInt and number.isNaN for relative use cases. Furthermore, I understand how important it is to account for contingencies in code as a failsafe in order to not only anticipate user behavior but minimize bugs. For instance, in the initial iteration, I used prompts instead of confirms which could introduce opportunities for the user to mistype (e.g.,spelling, case, and other errors). Finally, I understand how vital notation is as well as formatting code so that it is easy to read. As the coding projects become more complex, it is critical to be able to reference and update code each step of the way.
@@ -28,10 +31,6 @@ I learned the necessity of separating global code from inner functions. For inst
 
 The html, css, and js files can be used to view the company website with web accessibility considerations applied. A link to the mockup is accessible from the repository file list. 
 ![Password Generator Mockup](./assets/images/03-javascript-homework-demo.png)
-
-## Credits
-
-The project was completed with help from the course materials and organization elements discussed with the Bootcamp tutor, Erik Hirsch.
 
 ## License
 
